@@ -1,0 +1,13 @@
+version: 2
+# Keep the SHA-pinned GitHub Actions current (D-fg-05/G12) — Dependabot bumps the pin
+# to the new commit SHA, gate-ci (now GATING, D-fg-18) keeps every uses: SHA-pinned.
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci(deps)"
+    groups:
+      actions:
+        patterns: ["*"]
